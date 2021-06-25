@@ -1,0 +1,76 @@
+openapi: 3.0.0
+info:
+  description: >-
+    This is a wrapper api of PaperMC API v2.
+
+    You can check PaperMC API v2 on
+    [Here](https://papermc.io/api/docs/swagger-ui/index.html?configUrl=/api/openapi/swagger-config)
+  version: 1.0.0
+  title: Clip
+tags:
+  - name: versions
+    description: Shows all version from paper builds.
+  - name: builds
+    description: Access to Petstore orders
+  - name: download
+    description: Operations about user
+    externalDocs:
+      description: Find out more about our store
+      url: 'http://swagger.io'
+paths:
+  /versions:
+    get:
+      tags:
+        - versions
+      summary: Get all versions from paper builds
+      description: Returns all versions from paper builds.
+      responses:
+        '200':
+          description: Shows all versions from paper build
+
+  /builds:
+    get:
+      tags:
+        - builds
+      summary: Get all build numbers from paper
+      description: Returns all build numbers from paper.
+      parameters:
+        - in: query
+          name: mc_version
+          schema:
+            type: string
+          description: The string of minecraft version.
+          required: true
+          allowReserved: false
+      responses:
+        '200':
+          description: Shows all build numbers from paper.
+
+  /download:
+    get:
+      tags:
+        - download
+      summary: Download .jar binary from papermc
+      description: Redirect to papermc's download url.
+      parameters:
+        - in: query
+          name: mc_version
+          schema:
+            type: string
+          description: The string of minecraft version.
+          required: true
+          allowReserved: false
+        - in: query
+          name: build
+          schema:
+            type: string
+          description: The string of build version.
+          required: false
+          allowReserved: false
+      responses:
+        '200':
+          description: Shows all build numbers from paper.
+
+servers:
+  - url: 'https://clip.aroxu.me'
+  - url: 'http://clip.aroxu.me'
