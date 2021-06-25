@@ -11,12 +11,9 @@ tags:
   - name: versions
     description: Shows all version from paper builds.
   - name: builds
-    description: Access to Petstore orders
+    description: Shows all builds from paper.
   - name: download
-    description: Operations about user
-    externalDocs:
-      description: Find out more about our store
-      url: 'http://swagger.io'
+    description: Redirect to download url.
 paths:
   /versions:
     get:
