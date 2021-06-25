@@ -1,0 +1,16 @@
+{
+  "name": "clip-docs",
+  "version": "1.0.0",
+  "description": "Docs for 'Clip'",
+  "repository": "https://github.com/aroxu/clip-docs",
+  "author": "aroxu <30624945+aroxu@users.noreply.github.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "prestart": "npm i -g yarn",
+    "start": "yarn install && yarn redoc-cli bundle clipoas.yml"
+  },
+  "dependencies": {
+    "redoc-cli": "^0.12.1"
+  }
+}
